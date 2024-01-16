@@ -10,6 +10,8 @@ class Quiz {
     return this.questions[this.currentQuestionIndex];
   }
   moveToNextQuestion() {
+    // this.currentQuestionIndex = this.currentQuestionIndex + 1;
+    // this.currentQuestionIndex += 1;
     this.currentQuestionIndex++;
   }
   shuffleQuestions() {
@@ -21,14 +23,19 @@ class Quiz {
     this.questions = shuffled;
   }
   checkAnswer(answer) {
-    if (answer) {
+    // if (answer) {
+    //   this.correctAnswers++;
+    // }
+    if (this.getQuestion().answer === answer) {
       this.correctAnswers++;
     }
   }
+
   hasEnded() {
-    if (this.currentQuestionIndex < this.questions.length) {
-      return false;
-    }
-    return true;
+    // if (this.currentQuestionIndex < this.questions.length) {
+    //   return false;
+    // }
+    // return true;
+    return this.currentQuestionIndex === this.questions.length;
   }
 }
